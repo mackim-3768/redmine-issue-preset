@@ -1,0 +1,4 @@
+ko:
+  label_stencil_templates: "Stencil 템플릿 관리"
+  label_stencil_template_edit: "Stencil 템플릿 수정"
+  notice_successful_update: "템플릿이 성공적으로 수정되었습니다."

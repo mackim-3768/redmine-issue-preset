@@ -1,0 +1,28 @@
+<h2><%= l(:label_stencil_templates) %></h2>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th><%= l(:label_tracker) %></th>
+      <th><%= l(:field_description) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trackers.each do |tracker| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= tracker.name %></td>
+        <td>
+          <% if @templates[tracker.id] %>
+            <span class="icon icon-checked"><%= l(:general_text_yes) %></span>
+          <% else %>
+            <span class="icon icon-close" style="color: #bbb;"><%= l(:general_text_no) %></span>
+          <% end %>
+        </td>
+        <td class="buttons">
+          <%= link_to l(:button_edit), edit_stencil_templates_path(tracker_id: tracker.id), class: 'icon icon-edit' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

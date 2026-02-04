@@ -1,0 +1,15 @@
+<h2><%= l(:label_stencil_template_edit) %>: <%= @tracker.name %></h2>
+
+<%= form_for @template, url: update_stencil_templates_path(tracker_id: @tracker.id), method: :patch do |f| %>
+  <%= error_messages_for @template %>
+
+  <div class="box tabular">
+    <p>
+      <%= f.label :body, l(:field_description) %>
+      <%= f.text_area :body, rows: 20, class: 'wiki-edit' %>
+      <%= wikitoolbar_for 'stencil_template_body' %>
+    </p>
+  </div>
+
+  <%= submit_tag l(:button_save) %>
+<% end %>
