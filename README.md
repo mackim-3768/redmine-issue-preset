@@ -15,22 +15,28 @@ Redmine 이슈 생성 시 트래커(Tracker)별로 미리 정의된 설명(Descr
 
 ## 설치 방법 (Installation)
 
-1. Redmine 플러그인 디렉토리로 이동합니다.
+1. Redmine `plugins` 디렉토리로 이동합니다.
    ```bash
    cd /path/to/redmine/plugins
    ```
 
-2. 플러그인을 다운로드합니다 (폴더명은 반드시 `redmine_stencil`이어야 합니다).
+2. 플러그인을 다운로드합니다. (폴더명은 반드시 `redmine_stencil`이어야 합니다)
    ```bash
    git clone https://github.com/your-repo/redmine_stencil.git
    ```
 
-3. 데이터베이스 마이그레이션을 실행합니다.
+3. Redmine 루트 디렉토리로 이동하여 의존성을 설치합니다.
+   ```bash
+   cd ..
+   bundle install
+   ```
+
+4. 데이터베이스 마이그레이션을 실행합니다.
    ```bash
    bundle exec rake redmine:plugins:migrate NAME=redmine_stencil RAILS_ENV=production
    ```
 
-4. Redmine을 재시작합니다.
+5. Redmine을 재시작합니다.
 
 ## 사용 방법 (Usage)
 
